@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mainpulation Demo</title>
+</head>
+
+<body>
+    <button onclick="sort()">SortList</button>
+    <ul>
+        <li>7</li>
+        <li>1</li>
+        <li>8</li>
+        <li>3</li>
+        <li>9</li>
+        <li>4</li>
+    </ul>
+    <script>
+        function sort() {
+            const ul = document.querySelector('ul');
+            const items = [...ul.children];
+            items.sort((a, b) => Number(a.textContent) - Number(b.textContent));
+            for (let item of items) {
+                ul.appendChild(item);
+            }
+        }
+    </script>
+</body>
+
+</html>
